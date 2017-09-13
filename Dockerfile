@@ -8,6 +8,6 @@ RUN yum -y update && \
  yum  -y install jre.rpm && \
  wget http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz && \
  tar xvf apache-tomcat-8.5.20.tar.gz && \
- mv apache-tomcat-8.5.20 tomcat8 && \
+ mv apache-tomcat-8.5.20 tomcat8 
 EXPOSE 8080
 EXPOSE 8009
