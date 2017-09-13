@@ -11,8 +11,8 @@ RUN yum -y update && \
  wget http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz && \
  tar xvf apache-tomcat-8.5.20.tar.gz && \
  mv apache-tomcat-8.5.20 /usr/local/tomcat8 && \
- rm -y apache-tomcat-8.5.20.tar.gz && \
- rm -y jre.rpm
+ rm -rf apache-tomcat-8.5.20.tar.gz && \
+ rm -rf jre.rpm
 WORKDIR $CATALINA_HOME
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
