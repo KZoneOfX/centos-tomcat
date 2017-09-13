@@ -1,7 +1,7 @@
 # Centos based container with Java and Tomcat
 FROM centos:centos7
 MAINTAINER zhangxiaoke@xiaoluyy.com
-ENV CATALINA_HOME /usr/local/tomcat8
+ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN yum -y update && \
  yum -y install wget && \
@@ -10,7 +10,7 @@ RUN yum -y update && \
  yum  -y install jre.rpm && \
  wget http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz && \
  tar xvf apache-tomcat-8.5.20.tar.gz && \
- mv apache-tomcat-8.5.20 /usr/local/tomcat8 && \
+ mv apache-tomcat-8.5.20 /usr/local/tomcat && \
  rm -rf apache-tomcat-8.5.20.tar.gz && \
  rm -rf jre.rpm
 WORKDIR $CATALINA_HOME
