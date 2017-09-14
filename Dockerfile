@@ -1,5 +1,5 @@
 # Centos based container with Java and Tomcat
-FROM centos:centos7
+FROM xiaoluyy/cantos7
 MAINTAINER zhangxiaoke@xiaoluyy.com
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -13,12 +13,6 @@ RUN wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.81/bin/apache-tomc
  mv apache-tomcat-7.0.81 /usr/local/tomcat && \
  rm -rf apache-tomcat-7.0.81.tar.gz && \
  rm -rf jre.rpm
-RUN echo "LANG=zh_CN.UTF-8" > /etc/locale.conf && \
- rm -rf /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
- yum -y install kde-l10n-Chinese && \
- yum -y reinstall glibc-common && \
- localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
-ENV LANG C.UTF-8  
 WORKDIR $CATALINA_HOME
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
